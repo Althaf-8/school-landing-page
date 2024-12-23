@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission form</title>
+    <style>
+        body {
+            background-image: url(_5e4b33f7-a3e8-46d5-be8b-d908e2147f3f.jpeg);
+            background-size: fill;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .form-group label {
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .form-group input {
+            margin: 1px;
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input[radio] {
+            flex-grow: 0;
+            margin-left: 10px;
+        }
+
+        .buttons input {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .buttons input[type="submit"] {
+            background-color: green;
+            color: whitesmoke;
+            text-transform: uppercase;
+        }
+
+        .buttons input[type="reset"] {
+            background-color: red;
+            color: whitesmoke;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<div class="container">
+
+    <body background="./_5e4b33f7-a3e8-46d5-be8b-d908e2147f3f.jpeg">
+        <h1>Registration for KTS School</h1>
+        <form method="post" action="rej.action">
+            <div class="form-group">
+                <label for="FName">First Name:</label>
+                <input type="text" id="FName" name="FName" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="MName">Middle Name:</label>
+                <input type="text" id="MName" name="MName">
+            </div>
+            <div class="form-group">
+                <label for="LName">Last Name:</label>
+                <input type="text" id="LName" name="LName">
+            </div>
+            <div class="form-group">
+                <label for="FName">Father Name:</label>
+                <input type="text" id="FName" name="FName">
+            </div>
+            <div class="form-group">
+                <label for="Dbirth">Date of Birth:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+            <div class="form-group">
+                <label for="Mobile">Mobile:</label>
+                <input type="tel" id="Mobile" name="Mobile" pattern="[0-9]{10}">
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="Male" required>Male
+                <input type="radio" name="gender" value="Female" required>Female
+            </div>
+            <div class="form-group">
+                <label for="gmail">Gmail:</label>
+                <input type="email" id="gmail" name="gmail" required>
+            </div>
+            <div class="form-group">
+                <label for="Address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+            <div class="thank-you-message" id="thankYouMessage">Thank you for registering!</div>
+        </form>
+        <script>
+            const form = document.getElementById("registrationForm");
+            const thankYouMessage = document.getElementById("thankYouMessage");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevents the default form submission
+
+                // Show the thank you message
+                thankYouMessage.style.display = "block";
+
+                // Optionally clear the form
+                form.reset();
+            });
+        </script>
+</div>
+</body>
+
+</html>
